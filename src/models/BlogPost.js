@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("./User");
+const dayjs = require('dayjs')
 
 const blogSchema = new mongoose.Schema({
   image: {
@@ -21,7 +22,7 @@ const blogSchema = new mongoose.Schema({
   },
   dateCreated: {
     type: Date,
-    default: Date.now(),
+    default:dayjs(new Date()).format("MMMM DD, YYYY"),
   },
 });
 

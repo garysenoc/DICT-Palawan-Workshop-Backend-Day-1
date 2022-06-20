@@ -97,6 +97,7 @@ const loginUser = async (req, res) => {
     return res.status(200).json({
       status: "success",
       message: "You have successfuly logged in",
+      userData: existingUser
     });
   } catch (err) {
     console.log(err);
