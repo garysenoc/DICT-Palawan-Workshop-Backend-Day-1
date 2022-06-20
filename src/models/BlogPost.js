@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("./User");
-const dayjs = require('dayjs')
+const dayjs = require("dayjs");
 
 const blogSchema = new mongoose.Schema({
   image: {
@@ -21,11 +21,10 @@ const blogSchema = new mongoose.Schema({
     ref: User,
   },
   dateCreated: {
-    type: Date,
-    default:dayjs(new Date()).format("MMMM DD, YYYY"),
+    type: String,
+    default: dayjs(new Date()).format("MMMM DD, YYYY"),
   },
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
 module.exports = Blog;
-
